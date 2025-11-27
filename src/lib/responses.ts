@@ -30,7 +30,7 @@ export class AppResponse {
             success: this.success,
             status: this.status,
             message: this.message,
-            data: this.data
+            content: this.data
         });
     }
 }

@@ -24,8 +24,11 @@ export const getMe: RequestHandler = async (req: Request, res: Response) => {
         lastname: user.lastname,
         email: user.email,
         lastLoginAt: user.lastLoginAt,
-        createdAt: user.createdAt,
         twoFactorEnabled: user.twoFactorEnabled,
+        createdAt: user.createdAt,
+        address: user.address,
+        emailVerified: user.emailVerified,
+        updatadAt: user.updatedAt
     };
 
     return new AppResponse(200, "User fetched", data).send(res);
@@ -63,8 +66,13 @@ export const updateProfile = async (req: Request, res: Response) => {
         firstname: user.firstname,
         lastname: user.lastname,
         email: user.email,
-        address: user.address,
+        lastLoginAt: user.lastLoginAt,
         twoFactorEnabled: user.twoFactorEnabled,
+        createdAt: user.createdAt,
+        address: user.address,
+        emailVerified: user.emailVerified,
+        updatadAt: user.updatedAt
+
     };
 
     return new AppResponse(200, "Profile updated", data).send(res);

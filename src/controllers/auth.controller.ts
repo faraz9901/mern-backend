@@ -125,6 +125,10 @@ export const login = async (req: Request, res: Response) => {
             email: user.email,
             lastLoginAt: user.lastLoginAt,
             twoFactorEnabled: user.twoFactorEnabled,
+            createdAt: user.createdAt,
+            address: user.address,
+            emailVerified: user.emailVerified,
+            updatadAt: user.updatedAt
         };
 
         return new AppResponse(200, "Login successful", data).send(res);
@@ -199,6 +203,10 @@ export const verifyTwoFactor = async (req: Request, res: Response) => {
         email: user.email,
         lastLoginAt: user.lastLoginAt,
         twoFactorEnabled: user.twoFactorEnabled,
+        createdAt: user.createdAt,
+        address: user.address,
+        emailVerified: user.emailVerified,
+        updatadAt: user.updatedAt
     };
 
     return new AppResponse(200, "2FA verified, login successful", data).send(res);
