@@ -1,8 +1,12 @@
-export interface AppRequest extends Request {
-    session: {
-        user: {
-            id: string,
-            email: string
-        }
+import { Session } from "express-session"
+
+interface AppSession extends Session {
+    user?: {
+        id: string,
+        email: string
     }
+}
+
+export interface AppRequest extends Request {
+    session: AppSession
 }

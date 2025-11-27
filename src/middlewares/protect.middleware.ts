@@ -1,11 +1,11 @@
-import { NextFunction, Request, Response } from "express";
-import { AppRequest } from "../types";
+import { RequestHandler } from "express";
 import { AppError } from "../lib/responses";
+import { getAppRequest } from "../lib/requestProvider";
 
-export const protect = (req: AppRequest, res: Response, next: NextFunction) => {
-    if (req.session.user) {
-        next();
-    } else {
-        throw new AppError(401, 'You are not logged in! Please log in to get access.');
-    }
+export const protect: RequestHandler = (req, res, next) => {
+    const { session } = getAppRequest(req);
+
+    if (session.user?.id) return next();
+
+    throw new AppError(401, "You are not logged in! Please log in to get access.")
 };

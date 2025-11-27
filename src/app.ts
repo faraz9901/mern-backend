@@ -4,6 +4,8 @@ import cors from 'cors'
 import config from './config';
 import { sessionMiddleware } from './middlewares/session.middleware';
 import helmet from 'helmet';
+import authRouter from './routes/auth.routes';
+import userRouter from './routes/user.routes';
 
 const app = express();
 
@@ -17,6 +19,8 @@ app.use(cors({
     credentials: true
 }));
 
+app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 
 app.use(errorHandler);
 
