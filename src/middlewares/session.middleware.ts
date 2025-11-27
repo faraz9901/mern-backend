@@ -10,7 +10,7 @@ export const sessionMiddleware = session({
         maxAge: 1000 * 60 * 60 * 24, // 1 day
         httpOnly: true,
         secure: config.nodeEnv === "production",
-        sameSite: "lax",
+        sameSite: "none",
     },
     store: MongoStore.create({
         mongoUrl: config.mongoUrl,
