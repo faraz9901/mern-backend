@@ -3,14 +3,12 @@ import { errorHandler } from './lib/responses';
 import cors from 'cors'
 import config from './config';
 import { sessionMiddleware } from './middlewares/session.middleware';
-import helmet from 'helmet';
 import authRouter from './routes/auth.routes';
 import userRouter from './routes/user.routes';
 
 const app = express();
 
 app.use(express.json());
-app.use(helmet());
 
 app.use(sessionMiddleware);
 
