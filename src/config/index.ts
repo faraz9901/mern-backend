@@ -23,8 +23,8 @@ const config: Config = {
     sessionSecret: process.env.SESSION_SECRET || '',
     encryptionKey: process.env.ENCRYPTION_KEY || '',
     encryptionIV: process.env.ENCRYPTION_IV || '',
-    gmailUser: process.env.GMAIL_PASSWORD || '',
-    gmailPass: process.env.GMAIL_ADDRESS || '',
+    gmailPass: process.env.GMAIL_PASSWORD || '',
+    gmailUser: process.env.GMAIL_ADDRESS || '',
 };
 
 
